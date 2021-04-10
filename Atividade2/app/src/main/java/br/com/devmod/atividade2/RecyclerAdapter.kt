@@ -18,7 +18,7 @@ class RecyclerAdapter(
     ) :RecyclerView.Adapter<BaseViewHolder<*>>() {
 
     interface OnAnimalClickListener{
-        fun onItemClick(nome: String)
+        fun onItemClick(tipo: String)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): BaseViewHolder<*> {
@@ -38,7 +38,7 @@ class RecyclerAdapter(
 
     inner class AnimaisViewHolder(itemView: View) : BaseViewHolder<Animal>(itemView){
         override fun bind(item: Animal, position: Int) {
-            itemView.setOnClickListener { itemClickListener.onItemClick(item.nome) }
+            itemView.setOnClickListener { itemClickListener.onItemClick(item.tipo) }
             Glide.with(context).load(item.image).into(itemView.img_animal)
             itemView.txt_nome_animal.text = item.nome
         }

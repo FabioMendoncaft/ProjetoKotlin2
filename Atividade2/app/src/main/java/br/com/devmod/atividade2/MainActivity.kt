@@ -21,19 +21,23 @@ class MainActivity : AppCompatActivity(),RecyclerAdapter.OnAnimalClickListener {
         val listaAnimais = listOf(
             Animal(
                 "Cachorro",
-                R.drawable.cachorro
+                R.drawable.cachorro,
+                "Espécie: Canis lupus familiaris \nTipo: Doméstico"
             ),
             Animal(
                 "Gato",
-                R.drawable.gato
+                R.drawable.gato,
+                "Espécie: Felis silvestris catus \nTipo: Domestico"
             ),
             Animal(
-                "Elefante",
-                R.drawable.elefante
+                "Elefante Africano",
+                R.drawable.elefante,
+                "Espécie: Loxodonta africana \nTipo: Selvagem"
             ),
             Animal(
                 "Tigre",
-                R.drawable.tigre
+                R.drawable.tigre,
+                "Espécie: Panthera tigris \nTipo: Selvagem"
             )
         )
 
@@ -41,7 +45,9 @@ class MainActivity : AppCompatActivity(),RecyclerAdapter.OnAnimalClickListener {
         recyclerView.adapter = RecyclerAdapter(this,listaAnimais, this)
     }
 
-    override fun onItemClick(nome: String) {
-        Toast.makeText(this, "Este animal é: $nome", Toast.LENGTH_SHORT).show()
+    override fun onItemClick(tipo: String) {
+        Toast.makeText(this, tipo, Toast.LENGTH_SHORT).show()
     }
+
+
 }
